@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>知行楼</title>
+		 <script src="https://cesiumjs.org/releases/1.59/Build/Cesium/Cesium.js"></script>
+		<link href="https://cesiumjs.org/releases/1.59/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+	</head>
+	<body>
+	<div id="cesiumContainer" style="width: 100%; height:100%"></div>
+  <script>
+    Cesium.Ion.defaultAccessToken = 'your_access_token';
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+        terrainProvider: Cesium.createWorldTerrain()
+    });
+
+    var tileset = viewer.scene.primitives.add(
+        new Cesium.Cesium3DTileset({
+            url: 'zxl043dtitles/tileset.json'
+        })
+    );
+    viewer.zoomTo(tileset);
+  </script>
+	</body>
+</html>
